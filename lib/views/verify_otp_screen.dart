@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:project_test/views/helper_widget/custom_button.dart';
 import '../controllers/auth_controller.dart';
 
 class VerifyOTPScreen extends StatelessWidget {
@@ -27,10 +28,16 @@ class VerifyOTPScreen extends StatelessWidget {
             const SizedBox(height: 20),
             Obx(() => Text(authController.otp.value, style: const TextStyle(fontSize: 24, letterSpacing: 16))),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: authController.verifyOtp,
-              style: ElevatedButton.styleFrom(minimumSize: const Size(double.infinity, 50)),
-              child: const Text('Verify'),
+            // ElevatedButton(
+            //   onPressed: authController.verifyOtp,
+            //   style: ElevatedButton.styleFrom(minimumSize: const Size(double.infinity, 50)),
+            //   child: const Text('Verify'),
+            // ),
+            CustomButton(
+              text: 'Verify',
+              onTap: () {
+                Get.toNamed('/enter_otp');
+              },
             ),
             TextButton(
               onPressed: authController.resendOtp,

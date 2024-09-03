@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Fin Track',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/enter_otp', page: () => EnterOTPScreen()),
         GetPage(name: '/create_new_password', page: () => CreateNewPasswordScreen()),
         GetPage(name: '/forgot_password', page: () => ForgotPasswordScreen()),
-        GetPage(name: '/home', page: () => HomeScreen()),
+        GetPage(name: '/home', page: () => const HomeScreen()),
         GetPage(name: '/sign_in', page: () => SignInScreen()),
         GetPage(name: '/sign_up', page: () => SignUpScreen()),
         GetPage(name: '/verification', page: () => VerificationScreen()),
